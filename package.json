@@ -4,10 +4,10 @@
   "private": true,
   "packageManager": "pnpm@11.5.2",
   "scripts": {
-    "dev": "pnpm --filter web dev",
-    "build": "pnpm --filter web build",
-    "lint": "pnpm --filter web lint",
-    "test": "pnpm --filter web test"
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test"
   },
   "devDependencies": {
     "turbo": "^2.0.0"

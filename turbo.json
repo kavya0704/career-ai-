@@ -1,5 +1,16 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "DATABASE_URL",
+    "REDIS_URL",
+    "GROQ_API_KEY",
+    "GOOGLE_GEMINI_API_KEY",
+    "NEXTAUTH_SECRET",
+    "NEXTAUTH_URL",
+    "SCRAPER_SERVICE_API_KEY",
+    "SCRAPER_SERVICE_URL",
+    "ENABLE_EXPERIMENTAL_COREPACK"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
