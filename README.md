@@ -1,5 +1,5 @@
 # CareerAI Copilot — Unified Job Hunting Suite
-
+https://career-ai-web.vercel.app/
 CareerAI Copilot is a distributed, event-driven SaaS platform designed to streamline and automate the modern job hunting pipeline. It leverages a Next.js web application for frontend logic and user profiles, combined with a Python FastAPI microservice for high-throughput, parallelized job scraping.
 
 For a deep dive into the technical details and architecture, check out the full [architecture.md](file:///c:/Users/kavya/Documents/AI%20Career%20Accelerator%20Platform/architecture.md).
