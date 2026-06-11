@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", inter.variable, outfit.variable, "font-sans", geist.variable)}
+      className={cn("h-full dark", inter.variable, outfit.variable, "font-sans", geist.variable)}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col antialiased bg-background text-foreground">
