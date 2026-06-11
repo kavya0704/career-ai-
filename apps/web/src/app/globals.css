@@ -265,8 +265,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px -5px hsl(var(--primary) / 0.3); }
-  50% { box-shadow: 0 0 40px -5px hsl(var(--primary) / 0.5); }
+  0%, 100% { box-shadow: 0 0 20px -5px color-mix(in oklch, var(--primary) 30%, transparent); }
+  50% { box-shadow: 0 0 40px -5px color-mix(in oklch, var(--primary) 50%, transparent); }
 }
 
 @keyframes float {
@@ -285,12 +285,12 @@
    ============================================================================= */
 
 * {
-  border-color: hsl(var(--border));
+  border-color: var(--border);
 }
 
 body {
-  background: hsl(var(--background));
-  color: hsl(var(--foreground));
+  background: var(--background);
+  color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -307,18 +307,18 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground) / 0.3);
+  background: color-mix(in oklch, var(--muted-foreground) 30%, transparent);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground) / 0.5);
+  background: color-mix(in oklch, var(--muted-foreground) 50%, transparent);
 }
 
 /* ─── Selection ─── */
 ::selection {
-  background: hsl(var(--primary) / 0.2);
-  color: hsl(var(--foreground));
+  background: color-mix(in oklch, var(--primary) 20%, transparent);
+  color: var(--foreground);
 }
 
 /* =============================================================================
@@ -327,11 +327,13 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary), oklch(0.65 0.25 310), var(--accent));
+  background: linear-gradient(135deg, var(--brand-indigo), var(--brand-violet), var(--brand-cyan));
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: transparent;
+  display: inline-block;
   animation: gradient-shift 4s ease-in-out infinite;
 }
 
@@ -373,10 +375,10 @@ body {
 
 /* Glassmorphism sidebar */
 .glass-sidebar {
-  background: hsl(var(--sidebar) / 0.75);
+  background: color-mix(in oklch, var(--sidebar) 75%, transparent);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-right: 1px solid hsl(var(--border) / 0.4);
+  border-right: 1px solid color-mix(in oklch, var(--border) 40%, transparent);
 }
 
 /* Glowing border effect */
@@ -387,7 +389,7 @@ body {
   content: '';
   position: absolute;
   inset: -1px;
-  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)));
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
   border-radius: inherit;
   z-index: -1;
   opacity: 0.3;
@@ -401,9 +403,9 @@ body {
 .skeleton {
   background: linear-gradient(
     90deg,
-    hsl(var(--muted)) 25%,
-    hsl(var(--muted-foreground) / 0.15) 50%,
-    hsl(var(--muted)) 75%
+    var(--muted) 25%,
+    color-mix(in oklch, var(--muted-foreground) 15%, transparent) 50%,
+    var(--muted) 75%
   );
   background-size: 400% 100%;
   animation: shimmer 2s infinite linear;
@@ -430,7 +432,7 @@ body {
 .hover-lift:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
-  border-color: hsl(var(--primary) / 0.4);
+  border-color: color-mix(in oklch, var(--primary) 40%, transparent);
 }
 
 /* Focus ring */
@@ -438,7 +440,7 @@ body {
   outline: none;
 }
 .focus-ring:focus-visible {
-  box-shadow: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(var(--ring));
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ring);
 }
 
 /* Sidebar slide animation */
