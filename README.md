@@ -59,10 +59,6 @@ REDIS_URL="redis://localhost:6379"
 NEXTAUTH_SECRET=supersecretnextauthsecretkey321
 NEXTAUTH_URL=http://localhost:3000
 
-# Internal Communication Token
-SCRAPER_SERVICE_API_KEY=careerai_internal_secret_key_987
-```
-
 ### 2. Install Dependencies & Generate Prisma Client
 Run the following in the root folder:
 ```bash
